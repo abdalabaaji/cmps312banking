@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const bankService = require("./bank-service")
 
+router.route("/accounts")
+    .get(bankService.getAccounts)
+
 router.route("/accounts/:cid")
     .get(bankService.getAccounts)
 

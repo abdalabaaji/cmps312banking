@@ -17,6 +17,9 @@ class BankRepository {
     async getBanks() {
         return banks
     }
+    async getAllAccounts() {
+        return accounts
+    }
     async getAccounts(cid) {
         if (cid == null) return "You should pass a customer id"
         else return accounts.filter(c => c.cid == cid);
