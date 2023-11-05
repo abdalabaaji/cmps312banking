@@ -65,15 +65,15 @@ class BankRepository {
             return e
         }
     }
-    async updateBeneficiary(benefiicary, cid) {
+    async updateBeneficiary(beneficiary, cid) {
         try {
-            const index = beneficiaries.findIndex(_bene => _bene.accountNo == benefiicary.accountNo && _bene.cid == benefiicary.cid);
+            const index = beneficiaries.findIndex(_bene => _bene.accountNo == beneficiary.accountNo && _bene.cid == beneficiary.cid);
             if (index >= 0) {
-                beneficiaries[index] = benefiicary;
+                beneficiaries[index] = beneficiary;
                 await this.save(this.beneficiariesFilePath, beneficiaries);
-                return `beneficiary ${benefiicary.accounts} successfully updated`
+                return `beneficiary ${beneficiary.accounts} successfully updated`
             }
-            return `Beneficiary ${benefiicary.accountNo} does not exit`
+            return `Beneficiary ${beneficiary.accountNo} does not exit`
         } catch (err) {
             throw err
         }
