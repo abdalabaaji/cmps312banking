@@ -47,7 +47,7 @@ class BankService {
             // just implemented because it was requested the url to be like this
             const cid = req.params.cid
             const transfer = req.body
-            if (transfer.transferId == null)
+            if (transfer == null)
                 res.status(500).send("transfer can not be null or it should be in json format");
             else {
                 const response = await bankRepo.addTransfer(transfer);
