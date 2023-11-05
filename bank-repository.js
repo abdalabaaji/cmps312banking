@@ -1,4 +1,5 @@
-const fs = require('fs-extra');
+// const fs = require('fs-extra');
+const fs = require('@cyclic.sh/s3fs');
 const path = require('path');
 const banks = require("./data/banks.json")
 const accounts = require("./data/accounts.json")
