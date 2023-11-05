@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <style>
+        body{
+            width: 80%;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Welcome to CMPS312 Banking APP </h1>
+            <p>APIs Documentation Page!</p>
+        </div>
+
+        <h2>Available API</h2>
+        <table class="table">
+
+            <tr>
+                <th>Description</th>
+                <th>Endpoint</th>
+                <th>Possible Methods</th>
+            </tr>
+            <tr>
+                <td>GET Accounts</td>
+                <td><a href="/api/accounts/10001">https://cmps312banking.herokuapp.com/api/accounts/:cid</a></td>
+                <td>GET</a></td>
+            </tr>
+            <tr>
+                <td>GET Transfers</td>
+                <td><a href="/api/transfers/10001">https://cmps312banking.herokuapp.com/api/transfers/:cid</a></td>
+                <td>GET</a></td>
+            </tr>
+            <tr>
+                <td>ADD Transfers</td>
+                <td><a href="/api/transfers/10001">https://cmps312banking.herokuapp.com/api/transfers/:cid</a></td>
+                <td>POST</a></td>
+            </tr>
+            <tr>
+                <td>DELETE Transfers</td>
+                <td><a href="/api/transfers/10001">https://cmps312banking.herokuapp.com/api/transfers/:cid/:transferId</a></td>
+                <td>DELETE</a></td>
+            </tr>
+            <tr>
+                <td>GET Beneficiaries</td>
+                <td><a href="/api/beneficiaries/10001">https://cmps312banking.herokuapp.com/api/beneficiaries/:cid</a></td>
+                <td>GET</td>
+            </tr>
+
+            <tr>
+                <td>ADD Beneficiary</td>
+                <td><a href="/api/beneficiaries">https://cmps312banking.herokuapp.com/api/beneficiaries/:cid</a></td>
+                <td>POST [Required cid in the URL] </a></td>
+            </tr>
+            <tr>
+                <td>UPDATE Beneficiary</td>
+                <td><a href="/api/beneficiaries">https://cmps312banking.herokuapp.com/api/beneficiaries/:cid</a></td>
+                <td>POST [Requires cid in the URL]</a></td>
+            </tr>
+
+            <tr>
+                <td>DELETE Beneficiary</td>
+                <td><a href="/api/beneficiaries/10001/10000">https://cmps312banking.herokuapp.com/api/beneficiaries/:cid/:accounNo</a></td>
+                <td>DELETE [Requires cid and accountNo in the URL]</a></td>
+            </tr>
+         
+            <tr>
+                <td>Local Banks</td>
+                <td><a href="/api/banks">https://cmps312banking.herokuapp.com/api/banks</a></td>
+                <td>GET</a></td>
+            </tr>
+
+        </table>
+        <h> <a href="https://github.com/cmps312f20/cmps312-content">Click here for course material page</a></h1>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "cid" : 10001,
+    "type": "Saving",
+    "accountNo": "9123-1456-789",
+    "balance" : 10000
+  },
+  {
+    "cid" : 10001,
+    "type": "Current",
+    "accountNo": "9123-1456-789",
+    "balance" : 20000
+  },
+  {
+    "cid" : 10002,
+    "type": "Saving",
+    "accountNo": "9123-1456-784",
+    "balance" : 30000
+  },
+  {
+    "cid" : 10002,
+    "type": "Current",
+    "accountNo": "9123-1456-784",
+    "balance" : 40000
+  },
+  {
+    "cid" : 10005,
+    "type": "Saving",
+    "accountNo": "9123-1456-785",
+    "balance" : 30000
+  },
+  {
+    "cid" : 10005,
+    "type": "Current",
+    "accountNo": "9123-1456-785",
+    "balance" : 40000
+  }
+]
