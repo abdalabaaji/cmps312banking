@@ -1,4 +1,3 @@
-// const fs = require('fs-extra');
 const fs = require('@cyclic.sh/s3fs');
 const path = require('path');
 const banks = require("./data/banks.json")
@@ -14,6 +13,7 @@ class BankRepository {
         this.transfersFilePath = "./data/transfers.json"
         this.beneficiariesFilePath = "./data/beneficiaries.json"
     }
+    
 
     async getBanks() {
         return banks
@@ -94,7 +94,6 @@ class BankRepository {
     async save(filepath, content) {
         return await fs.writeJSON(filepath, content)
     }
-
 }
 
 module.exports = new BankRepository();
