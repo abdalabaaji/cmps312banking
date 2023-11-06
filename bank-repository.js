@@ -28,7 +28,7 @@ class BankRepository {
     async getTransfers(cid) { return transfers.filter(t => t.cid == cid); }
 
     async addTransfer(transfer) {
-        transfer.transferId = uuidv4()
+        transfer.transferId = uuid()
         transfers.push(transfer)
         this.save(this.transfersFilePath, transfers)
         return transfer
