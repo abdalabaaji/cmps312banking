@@ -48,13 +48,13 @@ class BankService {
             const cid = req.params.cid
             const transfer = req.body
             if (transfer == null)
-                res.status(500).send("transfer can not be null or it should be in json format");
+                res.status(500).json("transfer can not be null or it should be in json format");
             else {
                 const response = await bankRepo.addTransfer(transfer);
                 res.json(response);
             }
         } catch (err) {
-            res.status(500).send(err);
+            res.status(500).json(err);
         }
     }
 
