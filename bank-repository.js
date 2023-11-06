@@ -13,7 +13,7 @@ class BankRepository {
         this.transfersFilePath = "./data/transfers.json"
         this.beneficiariesFilePath = "./data/beneficiaries.json"
     }
-    
+
 
     async getBanks() {
         return banks
