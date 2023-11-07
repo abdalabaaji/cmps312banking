@@ -44,6 +44,7 @@ class BankService {
             if (transfer == null)
                 res.status(500).json('transfer can not be null or it should be in json format')
             else {
+                transfer.cid = cid
                 const response = await bankRepo.addTransfer(transfer)
                 res.status(200).json(response)
             }
