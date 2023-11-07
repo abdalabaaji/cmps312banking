@@ -5,7 +5,8 @@ const accounts = require("./data/accounts.json")
 const beneficiaries = require("./data/beneficiaries.json")
 const transfers = require("./data/transfers.json")
 
-const { v4: uuidv4 } = require('uuid');
+const { uuid } = require('uuidv4');
+
 
 class BankRepository {
 
@@ -13,7 +14,6 @@ class BankRepository {
         this.transfersFilePath = "./data/transfers.json"
         this.beneficiariesFilePath = "./data/beneficiaries.json"
     }
-
 
     async getBanks() {
         return banks
@@ -28,10 +28,16 @@ class BankRepository {
     async getTransfers(cid) { return transfers.filter(t => t.cid == cid); }
 
     async addTransfer(transfer) {
-        transfer.transferId = uuid()
-        transfers.push(transfer)
-        this.save(this.transfersFilePath, transfers)
-        return transfer
+        try {
+            transfer.transferId = uuid()
+            transfers.push(transfer)
+            console.log(transfers);
+            await this.save(this.transfersFilePath, transfers);
+            return transfer
+        } catch (err) {
+            console.log(`----------- ${err} ------------`);
+            throw err
+        }
     }
 
     async deleteTransfer(cid, transferId) {
@@ -56,7 +62,7 @@ class BankRepository {
 
     async addBeneficiary(beneficiary) {
         try {
-            beneficiary.id = uuidv4()
+            beneficiary.id = uuid()
             beneficiaries.push(beneficiary)
             this.save(this.beneficiariesFilePath, beneficiaries)
             return beneficiary
@@ -92,8 +98,8 @@ class BankRepository {
         }
     }
     async save(filepath, content) {
-        return await fs.writeJSON(filepath, content)
+        return fs.writeFileSync(filepath, JSON.stringify(content));
     }
 }
 
-module.exports = new BankRepository();
+module.exports = new BankRepository();      
