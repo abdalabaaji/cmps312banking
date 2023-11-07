@@ -51,7 +51,7 @@ class BankService {
                 res.status(500).json("transfer can not be null or it should be in json format");
             else {
                 const response = await bankRepo.addTransfer(transfer);
-                res.json(response);
+                res.json("Successfully added the transfer");
             }
         } catch (err) {
             res.status(500).json(err);
