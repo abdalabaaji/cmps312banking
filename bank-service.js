@@ -43,10 +43,9 @@ class BankService {
 
     async addTransfer(req, res) {
         try {
-            //not used becasue it doesn't make sense for this senario, 
-            // just implemented because it was requested the url to be like this
             const cid = req.params.cid
             const transfer = req.body
+            console.log(transfer);
             if (transfer == null)
                 res.status(500).json("transfer can not be null or it should be in json format");
             else {
